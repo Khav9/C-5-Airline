@@ -7,7 +7,5 @@ export abstract class Employee extends Person{
             this.salary = salary;
       }
 
-      public getSalary(){
-            return this.salary;
-      }
+      abstract getSalary():number;
 }
