@@ -1,4 +1,4 @@
-class Gate {
+export class Gate {
     private gateNumber: string;
   
     constructor(gateNumber: string) {

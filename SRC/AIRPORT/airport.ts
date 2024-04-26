@@ -1,8 +1,11 @@
-class Airport {
-  private name: string;
+import { Address } from "../ADDRESS/address";
+import { Gate } from "./gate";
 
-  constructor(name: string) {
+export class Airport {
+  constructor(private name: string, private address:Address, private gate:Gate) {
     this.name = name;
+    this.address = address;
+    this.gate = gate;
   }
 
   getName(): string {

@@ -1,11 +1,16 @@
-class Route {
+import { Airport } from "./airport";
+
+export class Route {
     private departure: string;
     private arrival: string;
+    private airport:Airport;
 
-    constructor (departure: string, arrival: string) {
+    constructor (departure: string, arrival: string, airport:Airport) {
         this.departure = departure;
         this.arrival = arrival;
+        this.airport = airport;
     }
+    
     getDeparture(): string {
         return this.departure;
     }
