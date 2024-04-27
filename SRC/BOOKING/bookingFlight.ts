@@ -10,4 +10,8 @@ export class BookingFlight{
         this.bage = bage;
         this.seat = seat;
     }
+
+    public getFlight():Flight{
+        return this.flightNumber;
+    }
 }

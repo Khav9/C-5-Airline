@@ -5,4 +5,8 @@ export class Plane {
     constructor(private planeId: string) {
         this.planeId = planeId;
     }
+
+    public addSeat(...seat:Seat[]):void{
+        this.seats.push(...seat);
+    }
 }
