@@ -1,7 +1,6 @@
 export class Meal {
-    constructor(private name: string, private position: number, private salary: number) {
+    constructor(private name: string, private price:number) {
         this.name = name;
-        this.position = position;
-        this.salary = salary;
+        this.price = price;
     }
 }
