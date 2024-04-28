@@ -72,6 +72,11 @@ let route2 = new Route("Phnom Penh,Cambodia","Thailand",airport2);
 let flight1 = new Flight("ABC001",planeb13,date1);
 let flight2 = new Flight("ABC002",planeb12,date1);
 
+//meal
+let pizza = new Meal("Pizza",30);
+let humberger = new Meal("Humberger",50);
+let coca = new Meal("Coca",4);
+
 //=====add pilot
 
 flight1.addPilot(pilot1,pilot3);
@@ -80,15 +85,14 @@ flight2.addPilot(pilot1,pilot2);
 // ==== add route
 flight1.addRoute(route2);
 
+// === add meal
+flight1.addMeal(pizza,humberger,coca);
+
 //passenger
 let ngor = new Passenger(1,"Ngor","MAM",18,Gender.FEMALE,"N/A");
 let cheat = new Passenger(2,"Socheatek","MAO",14,Gender.MALE,"N/A");
 let khav = new Passenger(3,"khav","SAROEUN",18,Gender.MALE,"N/A");
 
-//meal
-let pizza = new Meal("Pizza",30);
-let humberger = new Meal("Humberger",50);
-let coca = new Meal("Coca",4);
 
 
 //bage
@@ -121,10 +125,13 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 
 // console.log(airline1.getNumberOfReturnTicket(flight1));
 
-//======== As an airline pilot, I want to know, for a given date, how many flights I have to join
+//========Q3 As an airline pilot, I want to know, for a given date, how many flights I have to join
 
 // console.log(airline1.getNumberOfFlightPilotJoin(pilot3,date1));
 
+// ======= Q4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare.
+
+// console.log("Total of meal in this flight is :", airline1.getNumberOfMealTypeByGivenFlight(flight1));
 
 
 // console.log(airline1);

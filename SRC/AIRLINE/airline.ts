@@ -29,13 +29,13 @@ export class Airline {
             return result;
       }
 
-      public getNumberOfReturnTicket(flight: Flight):number {
+      public getNumberOfReturnTicket(flight: Flight): number {
             let result: number = 0;
             this.bookings.forEach(element => {
                   let flightNumber = element.getFlight();
                   flightNumber.forEach(elemen => {
-                        if (elemen.getFlight().getFlightNumber() === flight.getFlightNumber()){
-                              if (element.getTicket() === Ticket.Return){
+                        if (elemen.getFlight().getFlightNumber() === flight.getFlightNumber()) {
+                              if (element.getTicket() === Ticket.Return) {
                                     result += 1;
                               }
                         }
@@ -44,20 +44,32 @@ export class Airline {
             return result;
       }
 
-      public getNumberOfFlightPilotJoin(pilotGive:Pilot,date:DateTime){
-            let result:number = 0;
+      public getNumberOfFlightPilotJoin(pilotGive: Pilot, date: DateTime) {
+            let result: number = 0;
             this.flights.forEach(flight => {
                   flight.getPilot().forEach(pilot => {
-                        if (pilot.getID() === pilotGive.getID()){
-                              if (flight.getDateTime().getDate() === date.getDate()){
+                        if (pilot.getID() === pilotGive.getID()) {
+                              if (flight.getDateTime().getDate() === date.getDate()) {
                                     result++;
                               }
-                              
+
                         }
-                  }); 
+                  });
             });
 
             return result;
+      }
+
+      public getNumberOfMealTypeByGivenFlight(flightGive: Flight):number {
+            let result:number = 0;
+            this.flights.forEach(flight => {
+                  if (flight.getFlightNumber() === flightGive.getFlightNumber()){
+                        flight.getMeal().forEach(meal => {
+                              result++;
+                        });
+                  }
+            });
+           return result; 
       }
 
 }

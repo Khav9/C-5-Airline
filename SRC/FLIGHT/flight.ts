@@ -1,11 +1,13 @@
 import { Plane } from "../AIRPLANE/plane";
 import { Route } from "../AIRPORT/route";
 import { DateTime } from "../DATE/date";
+import { Meal } from "../MEAL/meal";
 import { Pilot } from "../PERSON/pilot";
 
 export class Flight {
     private routes: Route;
     private pilots:Pilot[] = [];
+    private meals:Meal[] = [];
   
     constructor(private flightNumber: string, private airplane:Plane, private date:DateTime) {}
 
@@ -27,6 +29,14 @@ export class Flight {
 
     public getDateTime():DateTime{
       return this.date;
+    }
+
+    public addMeal(...meal:Meal[]):void{
+      this.meals.push(...meal);
+    }
+
+    public getMeal():Meal[] | undefined{
+      return this.meals;
     }
   
   }
