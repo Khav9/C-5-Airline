@@ -9,4 +9,8 @@ export class Pilot extends Employee {
     public getSalary(): number {
         return this.salary;
     }
+
+    public getID():number{
+        return this.id;
+    }
 }

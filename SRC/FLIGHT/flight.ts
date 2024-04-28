@@ -20,6 +20,14 @@ export class Flight {
     public getFlightNumber():string{
       return this.flightNumber;
     }
+
+    public getPilot():Pilot[] | undefined{
+      return this.pilots;
+    }
+
+    public getDateTime():DateTime{
+      return this.date;
+    }
   
   }
   

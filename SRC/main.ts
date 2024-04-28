@@ -25,6 +25,7 @@ let bankook = new Address("Bangkook","Thailand");
 //create date
 
 let date1 = new DateTime("04-05-2024","3:00 p.m.");
+let date2 = new DateTime("05-06-2024","11:00 p.m.");
 
 //airline
 let airline1 = new Airline("Phnom Penh Airport", phnompenh);
@@ -49,8 +50,8 @@ planeb13.addSeat(seat1,seat2,seat3,seat4,seat5,seat6,seat7);
 //pilot
 
 let pilot1 = new Pilot(1,"Pilot","last 1",36,Gender.MALE,1200,"N/A");
-let pilot2 = new Pilot(1,"Pilot","last 2",45,Gender.MALE,1500,"N/A");
-let pilot3 = new Pilot(1,"Pilot","last 3",52,Gender.MALE,1800,"N/A");
+let pilot2 = new Pilot(2,"Pilot","last 2",45,Gender.MALE,1500,"N/A");
+let pilot3 = new Pilot(3,"Pilot","last 3",52,Gender.MALE,1800,"N/A");
 
 
 //gate
@@ -71,10 +72,10 @@ let route2 = new Route("Phnom Penh,Cambodia","Thailand",airport2);
 let flight1 = new Flight("ABC001",planeb13,date1);
 let flight2 = new Flight("ABC002",planeb12,date1);
 
-
 //=====add pilot
 
 flight1.addPilot(pilot1,pilot3);
+flight2.addPilot(pilot1,pilot2);
 
 // ==== add route
 flight1.addRoute(route2);
@@ -95,7 +96,7 @@ let bage1 = new Bage(1,32);
 
 
 //booking
-let khavBooking = new Booking("BOOK1",khav,Ticket.NotReturn, date1);
+let khavBooking = new Booking("BOOK1",khav,Ticket.Return, date1);
 let cheatBooking = new Booking("BOOK2",cheat,Ticket.Return, date1);
 
 //====== add booking
@@ -108,6 +109,7 @@ khavBooking.addBookingFlight(bookingFlighKhav);
 cheatBooking.addBookingFlight(bookingFligCheat);
 //====== add flight
 airline1.addFlight(flight1);
+airline1.addFlight(flight2);
 
 //====== add employee
 airline1.addEmployee(pilot1,pilot2,pilot3);
@@ -117,7 +119,12 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 
 //=============Q2 how many passengers have return tickets
 
-console.log(airline1.getNumberOfReturnTicket(flight1));
+// console.log(airline1.getNumberOfReturnTicket(flight1));
+
+//======== As an airline pilot, I want to know, for a given date, how many flights I have to join
+
+// console.log(airline1.getNumberOfFlightPilotJoin(pilot3,date1));
+
 
 
 // console.log(airline1);
