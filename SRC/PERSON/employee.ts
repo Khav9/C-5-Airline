@@ -8,4 +8,6 @@ export abstract class Employee extends Person{
       }
 
       abstract getSalary():number;
+
+      abstract getID():number;
 }

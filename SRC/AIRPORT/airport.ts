@@ -11,4 +11,8 @@ export class Airport {
   getName(): string {
     return this.name;
   }
+
+  public getGate():Gate{
+    return this.gate;
+  }
 }

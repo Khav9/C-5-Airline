@@ -38,6 +38,11 @@ export class Flight {
     public getMeal():Meal[] | undefined{
       return this.meals;
     }
+
+    public getRoute():Route{
+      return this.routes;
+    }
+
   
   }
   

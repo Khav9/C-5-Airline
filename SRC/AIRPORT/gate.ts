@@ -4,5 +4,9 @@ export class Gate {
     constructor(gateNumber: string) {
       this.gateNumber = gateNumber;
     }
+
+    public getGateNumber():string{
+      return this.gateNumber;
+    }
   }
   

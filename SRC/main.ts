@@ -137,19 +137,10 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 
 // console.log("Salary that I need to pay all my employees is : $",airline1.getTotalOfSalaryPayAllEmployees());
 
+// ===== Q6 As a passenger, I want to know which gate my plane is waiting at.
 
-// console.log(airline1);
-// console.log(planeb13);
-// console.log(route1);
-// console.log(flight1);
-// console.log(khav);
-// console.log(coca);
-// console.log(khavBooking);
-// console.log(bookingFlighKhav);
+// console.log(airline1.getGateOfPassenger(ngor));
 
-
-
-
-
-
-
+// orr
+//flight need route in this case
+// console.log(airline1.getGatePlaneWaiting(flight2));

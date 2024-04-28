@@ -6,4 +6,9 @@ export class Passenger extends Person {
         super(id, firstName, lastName, age, gender);
         this.passport = passport;
     }
+
+    public getID():number{
+        return this.id;
+    }
+
 }

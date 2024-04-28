@@ -4,6 +4,7 @@ import { Ticket } from "../BOOKING/ticket";
 import { DateTime } from "../DATE/date";
 import { Flight } from "../FLIGHT/flight";
 import { Employee } from "../PERSON/employee";
+import { Passenger } from "../PERSON/passenger";
 import { Pilot } from "../PERSON/pilot";
 
 export class Airline {
@@ -60,24 +61,48 @@ export class Airline {
             return result;
       }
 
-      public getNumberOfMealTypeByGivenFlight(flightGive: Flight):number {
-            let result:number = 0;
+      public getNumberOfMealTypeByGivenFlight(flightGive: Flight): number {
+            let result: number = 0;
             this.flights.forEach(flight => {
-                  if (flight.getFlightNumber() === flightGive.getFlightNumber()){
+                  if (flight.getFlightNumber() === flightGive.getFlightNumber()) {
                         flight.getMeal().forEach(meal => {
                               result++;
                         });
                   }
             });
-           return result; 
+            return result;
       }
 
-      public getTotalOfSalaryPayAllEmployees():number{
-            let result:number = 0;
+      public getTotalOfSalaryPayAllEmployees(): number {
+            let result: number = 0;
             this.employees.forEach(employee => {
                   result += employee.getSalary();
             });
             return result;
       }
+
+      public getGateOfPassenger(passenger: Passenger): string[] | undefined {
+            let result: string[] = [];
+            this.bookings.forEach(booking => {
+                  if (booking.getPassenger().getID() === passenger.getID()) {
+                        booking.getFlight().forEach(flight => {
+                              result = result.concat(flight.getFlight().getRoute().getAirport().getGate().getGateNumber());
+                        });
+                  }
+            });
+            return result;
+      }
+
+      public getGatePlaneWaiting(flightGive: Flight):string{
+            let result:string;
+            this.flights.forEach(flight => {
+                  if (flight.getFlightNumber() === flightGive.getFlightNumber()){
+                        result =  flight.getRoute().getAirport().getGate().getGateNumber();
+                  }
+            });
+            return result;
+      }
+
+
 
 }

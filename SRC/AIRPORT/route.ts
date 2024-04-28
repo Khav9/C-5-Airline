@@ -17,4 +17,8 @@ export class Route {
     getArrival(): string {
         return this.arrival;
     }
+
+    public getAirport():Airport{
+        return this.airport;
+    }
 }
