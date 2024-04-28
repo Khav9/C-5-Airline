@@ -133,6 +133,10 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 
 // console.log("Total of meal in this flight is :", airline1.getNumberOfMealTypeByGivenFlight(flight1));
 
+//======= Q5  As an airline manager, I want to find out how much salary I pay all my employees.
+
+// console.log("Salary that I need to pay all my employees is : $",airline1.getTotalOfSalaryPayAllEmployees());
+
 
 // console.log(airline1);
 // console.log(planeb13);
