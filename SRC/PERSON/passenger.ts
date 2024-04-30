@@ -11,4 +11,8 @@ export class Passenger extends Person {
         return this.id;
     }
 
+    public getFullName():string{
+        return this.firstName + " "+  this.lastName;
+    }
+
 }

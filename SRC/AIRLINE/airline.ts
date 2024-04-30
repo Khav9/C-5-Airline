@@ -5,6 +5,15 @@ import { Flight } from "../FLIGHT/flight";
 import { Employee } from "../PERSON/employee";
 import { Passenger } from "../PERSON/passenger";
 
+type Meal = {
+      Total:number,
+      Meal:string[],
+}
+type resultOfTicket = {
+      Total:number,
+      Passenger:Passenger[]
+}
+
 export class Airline {
       private employees: Employee[] = [];
       private bookings: Booking[] = [];
@@ -28,14 +37,19 @@ export class Airline {
             return result;
       }
 
-      public getNumberOfReturnTicket(flight: Flight): number {
-            let result: number = 0;
+      public getNumberOfReturnTicket(flight: Flight): resultOfTicket {
+            let result:resultOfTicket ={
+                  Total:0,
+                  Passenger:[],
+            }
+
             this.bookings.forEach(element => {
                   let flightNumber = element.getFlight();
                   flightNumber.forEach(elemen => {
                         if (elemen.getFlight().getFlightNumber() === flight.getFlightNumber()) {
                               if (element.getTicket() === Ticket.Return) {
-                                    result += 1;
+                                    result.Total ++;
+                                    result.Passenger.push(element.getPassenger());
                               }
                         }
                   });
@@ -43,12 +57,18 @@ export class Airline {
             return result;
       }
 
-      public getNumberOfMealTypeByGivenFlight(flightGive: Flight): number {
-            let result: number = 0;
+      public getNumberOfMealTypeByGivenFlight(flightGive: Flight): Meal {
+            
+            let result:Meal = {
+                  Total:0,
+                  Meal:[],
+            };
+
             this.flights.forEach(flight => {
                   if (flight.getFlightNumber() === flightGive.getFlightNumber()) {
                         flight.getMeal().forEach(meal => {
-                              result++;
+                              result.Total += 1;
+                              result.Meal.push(meal.getName())                              
                         });
                   }
             });

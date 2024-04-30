@@ -121,21 +121,23 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 //=============Q1 get info of passenger by booking reference number
 // console.log(airline1.getInfoOfPassengerByBookingReferenceNumber("BOOK1"));
 
-//=============Q2 how many passengers have return tickets
+//=============Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 
-// console.log(airline1.getNumberOfReturnTicket(flight1));
+console.log(airline1.getNumberOfReturnTicket(flight1));
+
 
 //========Q3 As an airline pilot, I want to know, for a given date, how many flights I have to join
 
 pilot1.addFlight(flight1);
 pilot1.addFlight(flight2);
 
-console.log(pilot1.getNumberOfFlightPilotJoin(date1));
+
+// console.log(pilot1.getNumberOfFlightPilotJoin(date1));
 
 
 // ======= Q4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare.
 
-// console.log("Total of meal in this flight is :", airline1.getNumberOfMealTypeByGivenFlight(flight1));
+// console.log(airline1.getNumberOfMealTypeByGivenFlight(flight1));
 
 //======= Q5  As an airline manager, I want to find out how much salary I pay all my employees.
 

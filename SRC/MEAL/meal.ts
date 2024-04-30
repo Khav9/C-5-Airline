@@ -3,4 +3,7 @@ export class Meal {
         this.name = name;
         this.price = price;
     }
+    public getName():string{
+        return this.name;
+    }
 }
