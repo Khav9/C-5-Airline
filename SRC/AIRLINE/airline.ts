@@ -1,11 +1,9 @@
 import { Address } from "../ADDRESS/address";
 import { Booking } from "../BOOKING/booking";
 import { Ticket } from "../BOOKING/ticket";
-import { DateTime } from "../DATE/date";
 import { Flight } from "../FLIGHT/flight";
 import { Employee } from "../PERSON/employee";
 import { Passenger } from "../PERSON/passenger";
-import { Pilot } from "../PERSON/pilot";
 
 export class Airline {
       private employees: Employee[] = [];
@@ -42,22 +40,6 @@ export class Airline {
                         }
                   });
             });
-            return result;
-      }
-
-      public getNumberOfFlightPilotJoin(pilotGive: Pilot, date: DateTime) {
-            let result: number = 0;
-            this.flights.forEach(flight => {
-                  flight.getPilot().forEach(pilot => {
-                        if (pilot.getID() === pilotGive.getID()) {
-                              if (flight.getDateTime().getDate() === date.getDate()) {
-                                    result++;
-                              }
-
-                        }
-                  });
-            });
-
             return result;
       }
 
@@ -102,7 +84,5 @@ export class Airline {
             });
             return result;
       }
-
-
 
 }

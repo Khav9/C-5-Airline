@@ -79,8 +79,8 @@ let coca = new Meal("Coca",4);
 
 //=====add pilot
 
-flight1.addPilot(pilot1,pilot3);
-flight2.addPilot(pilot1,pilot2);
+flight1.addPilot(pilot1);
+flight2.addPilot(pilot2);
 
 // ==== add route
 flight1.addRoute(route2);
@@ -127,7 +127,11 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 
 //========Q3 As an airline pilot, I want to know, for a given date, how many flights I have to join
 
-// console.log(airline1.getNumberOfFlightPilotJoin(pilot3,date1));
+pilot1.addFlight(flight1);
+pilot1.addFlight(flight2);
+
+console.log(pilot1.getNumberOfFlightPilotJoin(date1));
+
 
 // ======= Q4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare.
 
@@ -144,3 +148,4 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 // orr
 //flight need route in this case
 // console.log(airline1.getGatePlaneWaiting(flight2));
+
