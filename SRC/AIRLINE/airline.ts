@@ -1,11 +1,18 @@
 import { Address } from "../ADDRESS/address";
 import { Booking } from "../BOOKING/booking";
 import { Ticket } from "../BOOKING/ticket";
-import { DateTime } from "../DATE/date";
 import { Flight } from "../FLIGHT/flight";
 import { Employee } from "../PERSON/employee";
 import { Passenger } from "../PERSON/passenger";
-import { Pilot } from "../PERSON/pilot";
+
+type Meal = {
+      Total:number,
+      Meal:string[],
+}
+type resultOfTicket = {
+      Total:number,
+      Passenger:Passenger[]
+}
 
 export class Airline {
       private employees: Employee[] = [];
@@ -35,14 +42,19 @@ export class Airline {
        * @param flight The flight for which return ticket count is to be calculated.
        * @returns The number of return tickets booked for the given flight.
        */
-      public getNumberOfReturnTicket(flight: Flight): number {
-            let result: number = 0;
+      public getNumberOfReturnTicket(flight: Flight): resultOfTicket {
+            let result:resultOfTicket ={
+                  Total:0,
+                  Passenger:[],
+            }
+
             this.bookings.forEach(element => {
                   let flightNumber = element.getFlight();
                   flightNumber.forEach(elemen => {
                         if (elemen.getFlight().getFlightNumber() === flight.getFlightNumber()) {
                               if (element.getTicket() === Ticket.Return) {
-                                    result += 1;
+                                    result.Total ++;
+                                    result.Passenger.push(element.getPassenger());
                               }
                         }
                   });``
@@ -50,39 +62,25 @@ export class Airline {
             return result;
       }
 
-      /**
-       * Counts the number of flights a pilot has joined on a specific date.
-       * @param pilotToFind The pilot object for which flights are to be counted.
-       * @param date The date on which flights are to be counted.
-       * @returns The number of flights the pilot joined on the specified date.
-       */
-      public getNumberOfFlightPilotJoin(pilotGive: Pilot, date: DateTime) {
-            let result: number = 0;
-            this.flights.forEach(flight => {
-                  flight.getPilot().forEach(pilot => {
-                        if (pilot.getID() === pilotGive.getID()) {
-                              if (flight.getDateTime().getDate() === date.getDate()) {
-                                    result++;
-                              }
-
-                        }
-                  });
-            });
-
-            return result;
-      }
+   
 
       /**
        * (see returns)
        * @param flightGive
        * @returns number of meal types for a given flight
        */
-      public getNumberOfMealTypeByGivenFlight(flightGive: Flight): number {
-            let result: number = 0;
+      public getNumberOfMealTypeByGivenFlight(flightGive: Flight): Meal {
+            
+            let result:Meal = {
+                  Total:0,
+                  Meal:[],
+            };
+
             this.flights.forEach(flight => {
                   if (flight.getFlightNumber() === flightGive.getFlightNumber()) {
                         flight.getMeal().forEach(meal => {
-                              result++;
+                              result.Total += 1;
+                              result.Meal.push(meal.getName())                              
                         });
                   }
             });   
@@ -132,4 +130,5 @@ export class Airline {
             });
             return result;
       }
+
 }
