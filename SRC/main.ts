@@ -143,4 +143,4 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 
 // orr
 //flight need route in this case
-// console.log(airline1.getGatePlaneWaiting(flight2));
+// console.log(airline1.getGatePlaneWaiting(flight1));
