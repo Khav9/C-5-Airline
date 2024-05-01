@@ -119,7 +119,7 @@ airline1.addFlight(flight2);
 airline1.addEmployee(pilot1,pilot2,pilot3);
 
 //=============Q1 get info of passenger by booking reference number
-console.log(airline1.getInfoOfPassengerByBookingReferenceNumber("BOOK1"));
+// console.log(airline1.getInfoOfPassengerByBookingReferenceNumber("BOOK1"));
 
 //=============Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 
@@ -145,8 +145,8 @@ pilot1.addFlight(flight2);
 
 // ===== Q6 As a passenger, I want to know which gate my plane is waiting at.
 
-// console.log(airline1.getGateOfPassenger(ngor));
+// console.log(airline1.getGateOfPassenger(cheat));
 
 // orr
 //flight need route in this case
-// console.log(airline1.getGatePlaneWaiting(flight1));
+console.log(airline1.getGatePlaneWaiting(flight1));

@@ -42,6 +42,7 @@ export class Airline {
        * @param flight The flight for which return ticket count is to be calculated.
        * @returns The number of return tickets booked for the given flight.
        */
+      
       public getNumberOfReturnTicket(flight: Flight): resultOfTicket {
             let result:resultOfTicket ={
                   Total:0,
@@ -57,20 +58,18 @@ export class Airline {
                                     result.Passenger.push(element.getPassenger());
                               }
                         }
-                  });``
+                  });
             });
             return result;
       }
-
-   
 
       /**
        * (see returns)
        * @param flightGive
        * @returns number of meal types for a given flight
        */
+
       public getNumberOfMealTypeByGivenFlight(flightGive: Flight): Meal {
-            
             let result:Meal = {
                   Total:0,
                   Meal:[],
@@ -91,6 +90,7 @@ export class Airline {
        * Calculates the total salary to be paid to all employees.
        * @returns The total salary for all employees.
        */
+
       public getTotalOfSalaryPayAllEmployees(): number {
             let result: number = 0;
             this.employees.forEach(employee => {
@@ -104,6 +104,7 @@ export class Airline {
        * @param passenger The passenger object for which gates are to be retrieved.
        * @returns An array of gate numbers or undefined if no bookings are found for the passenger.
        */
+
       public getGateOfPassenger(passenger: Passenger): string[] | undefined {
             let result: string[] = [];
             this.bookings.forEach(booking => {
@@ -118,9 +119,10 @@ export class Airline {
 
       /**
        * Retrieves the gate number for a given flight.
-       * @param flightToFind The flight object for which the gate number is to be retrieved.
+       * @param flightGive The flight object for which the gate number is to be retrieved.
        * @returns The gate number of the flight or undefined if the flight is not found.
        */
+
       public getGatePlaneWaiting(flightGive: Flight):string{
             let result:string;
             this.flights.forEach(flight => {
