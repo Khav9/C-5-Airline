@@ -119,11 +119,11 @@ airline1.addFlight(flight2);
 airline1.addEmployee(pilot1,pilot2,pilot3);
 
 //=============Q1 get info of passenger by booking reference number
-// console.log(airline1.getInfoOfPassengerByBookingReferenceNumber("BOOK1"));
+console.log(airline1.getInfoOfPassengerByBookingReferenceNumber("BOOK1"));
 
 //=============Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 
-console.log(airline1.getNumberOfReturnTicket(flight1));
+// console.log(airline1.getNumberOfReturnTicket(flight1));
 
 
 //========Q3 As an airline pilot, I want to know, for a given date, how many flights I have to join
