@@ -149,5 +149,4 @@ pilot1.addFlight(flight2);
 
 // orr
 //flight need route in this case
-// console.log(airline1.getGatePlaneWaiting(flight2));
-
+// console.log(airline1.getGatePlaneWaiting(flight1));
