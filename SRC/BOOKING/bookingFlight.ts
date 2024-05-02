@@ -4,7 +4,7 @@ import { Meal } from "../MEAL/meal";
 import { Bage } from "./bage";
 
 export class BookingFlight{
-    private meal:Meal[] = [];
+    private meals:Meal[] = [];
     constructor(private flightNumber: Flight, private bage:Bage, private seat:Seat){
         this.flightNumber = flightNumber;
         this.bage = bage;
@@ -13,5 +13,9 @@ export class BookingFlight{
 
     public getFlight():Flight{
         return this.flightNumber;
+    }
+
+    public addMeal(...meals:Meal[]):void{
+        this.meals.push(...meals);
     }
 }

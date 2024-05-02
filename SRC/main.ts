@@ -122,6 +122,12 @@ let khavBookingFlight2 = new BookingFlight(flight2,bage1,seat1);
 let cheatBookingFlight1 = new BookingFlight(flight1,bage1,seat2);
 let ngorBookingFlight1 = new BookingFlight(flight2,bage1,seat6);
 
+// add meal
+khavBookingFlight1.addMeal(coca);
+khavBookingFlight1.addMeal(humberger);
+khavBookingFlight2.addMeal(humberger);
+cheatBookingFlight1.addMeal(pizza);
+ngorBookingFlight1.addMeal(humberger);
 //========= add booking flight
 khavBooking.addBookingFlight(khavBookingFlight1);
 khavBooking.addBookingFlight(khavBookingFlight2);
@@ -168,3 +174,4 @@ coPilot2.addFlight(flight2);
 
 console.log(airline1.getGateOfPassenger(khav));
 
+console.log(khavBookingFlight1);
