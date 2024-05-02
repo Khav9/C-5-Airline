@@ -84,6 +84,7 @@ flight2.addPilot(pilot2);
 
 // ==== add route
 flight1.addRoute(route2);
+flight2.addRoute(route1);
 
 // === add meal
 flight1.addMeal(pizza,humberger,coca);
@@ -107,9 +108,11 @@ let cheatBooking = new Booking("BOOK2",cheat,Ticket.Return, date1);
 airline1.addBooking(khavBooking,cheatBooking);
 //bookingFligh
 let bookingFlighKhav = new BookingFlight(flight1,bage1,seat1);
+let bookingFlighKhav2 = new BookingFlight(flight2,bage1,seat1);
 let bookingFligCheat = new BookingFlight(flight1,bage1,seat2);
 //========= add booking flight
 khavBooking.addBookingFlight(bookingFlighKhav);
+khavBooking.addBookingFlight(bookingFlighKhav2);
 cheatBooking.addBookingFlight(bookingFligCheat);
 //====== add flight
 airline1.addFlight(flight1);
@@ -123,7 +126,7 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 
 //=============Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 
-console.log(airline1.getNumberOfReturnTicket(flight1));
+// console.log(airline1.getNumberOfReturnTicket(flight1));
 
 
 //========Q3 As an airline pilot, I want to know, for a given date, how many flights I have to join
@@ -145,8 +148,11 @@ pilot1.addFlight(flight2);
 
 // ===== Q6 As a passenger, I want to know which gate my plane is waiting at.
 
-// console.log(airline1.getGateOfPassenger(ngor));
+console.log(airline1.getGateOfPassenger(khav));
 
+<<<<<<< HEAD
 // orr
 //flight need route in this case
 // console.log(airline1.getGatePlaneWaiting(flight2));
+=======
+>>>>>>> 3e28defc99f6eb3b47a0444675047984ef371a86

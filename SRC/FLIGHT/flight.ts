@@ -43,6 +43,5 @@ export class Flight {
       return this.routes;
     }
 
-  
   }
   
