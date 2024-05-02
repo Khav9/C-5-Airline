@@ -112,17 +112,23 @@ let bage1 = new Bage(1,32);
 //booking
 let khavBooking = new Booking("BOOK1",khav,Ticket.Return, date1);
 let cheatBooking = new Booking("BOOK2",cheat,Ticket.Return, date1);
+let ngorBooking = new Booking("BOOK3",ngor,Ticket.NotReturn,date2);
 
 //====== add booking
 airline1.addBooking(khavBooking,cheatBooking);
 //bookingFligh
-let bookingFlighKhav = new BookingFlight(flight1,bage1,seat1);
-let bookingFlighKhav2 = new BookingFlight(flight2,bage1,seat1);
-let bookingFligCheat = new BookingFlight(flight1,bage1,seat2);
+let khavBookingFlight1 = new BookingFlight(flight1,bage1,seat1);
+let khavBookingFlight2 = new BookingFlight(flight2,bage1,seat1);
+let cheatBookingFlight1 = new BookingFlight(flight1,bage1,seat2);
+let ngorBookingFlight1 = new BookingFlight(flight2,bage1,seat6);
+
 //========= add booking flight
-khavBooking.addBookingFlight(bookingFlighKhav);
-khavBooking.addBookingFlight(bookingFlighKhav2);
-cheatBooking.addBookingFlight(bookingFligCheat);
+khavBooking.addBookingFlight(khavBookingFlight1);
+khavBooking.addBookingFlight(khavBookingFlight2);
+cheatBooking.addBookingFlight(cheatBookingFlight1);
+ngorBooking.addBookingFlight(ngorBookingFlight1);
+
+
 //====== add flight
 airline1.addFlight(flight1);
 airline1.addFlight(flight2);
