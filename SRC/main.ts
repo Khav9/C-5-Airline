@@ -161,3 +161,4 @@ coPilot2.addFlight(flight2);
 // ===== Q6 As a passenger, I want to know which gate my plane is waiting at.
 
 console.log(airline1.getGateOfPassenger(khav));
+
