@@ -27,6 +27,11 @@ export class Pilot extends Employee {
         this.flights.push(flight);
     }
 
+    /**
+     * Retrieves the number of flight pilots joined on a given date.
+     * @param {Date} date The date for which to retrieve the number of flight pilots joined.
+     * @returns {Result} The result object containing the date, total number of flight pilots joined, and flight numbers.
+     */
     public getNumberOfFlightPilotJoin(date:DateTime):result{
         let result:result = {
             Date:"",
