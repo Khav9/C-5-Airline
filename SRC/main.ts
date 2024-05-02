@@ -12,6 +12,7 @@ import { Ticket } from "./BOOKING/ticket";
 import { DateTime } from "./DATE/date";
 import { Flight } from "./FLIGHT/flight";
 import { Meal } from "./MEAL/meal";
+import { Copilot } from "./PERSON/coPilot";
 import { Gender } from "./PERSON/gender";
 import { Passenger } from "./PERSON/passenger";
 import { Pilot } from "./PERSON/pilot";
@@ -53,6 +54,10 @@ let pilot1 = new Pilot(1,"Pilot","last 1",36,Gender.MALE,1200,"N/A");
 let pilot2 = new Pilot(2,"Pilot","last 2",45,Gender.MALE,1500,"N/A");
 let pilot3 = new Pilot(3,"Pilot","last 3",52,Gender.MALE,1800,"N/A");
 
+// copilot
+
+let coPilot1 = new Copilot(1,"co pilot","last1",35,Gender.FEMALE,1200,"N/A");
+let coPilot2 = new Copilot(2,"co pilot","last2",28,Gender.FEMALE,900,"N/A");
 
 //gate
 let gsr = new Gate("SR06");
@@ -81,6 +86,10 @@ let coca = new Meal("Coca",4);
 
 flight1.addPilot(pilot1);
 flight2.addPilot(pilot2);
+
+// ==== add co-pilot
+flight1.addCopilot(coPilot1);
+flight2.addCopilot(coPilot2);
 
 // ==== add route
 flight1.addRoute(route2);
@@ -134,6 +143,9 @@ airline1.addEmployee(pilot1,pilot2,pilot3);
 pilot1.addFlight(flight1);
 pilot1.addFlight(flight2);
 
+coPilot1.addFlight(flight1);
+coPilot2.addFlight(flight2);
+
 
 // console.log(pilot1.getNumberOfFlightPilotJoin(date1));
 
@@ -149,4 +161,3 @@ pilot1.addFlight(flight2);
 // ===== Q6 As a passenger, I want to know which gate my plane is waiting at.
 
 console.log(airline1.getGateOfPassenger(khav));
-
