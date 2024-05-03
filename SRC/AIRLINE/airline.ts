@@ -6,12 +6,12 @@ import { Employee } from "../PERSON/employee";
 import { Passenger } from "../PERSON/passenger";
 
 type Meal = {
-      Total:number,
-      Meal:string[],
+      Total: number,
+      Meal: string[],
 }
 type resultOfTicket = {
-      Total:number,
-      Passenger:Passenger[]
+      Total: number,
+      Passenger: Passenger[]
 }
 
 export class Airline {
@@ -42,11 +42,11 @@ export class Airline {
        * @param flight The flight for which return ticket count is to be calculated.
        * @returns The number of return tickets booked for the given flight.
        */
-      
+
       public getNumberOfReturnTicket(flight: Flight): resultOfTicket {
-            let result:resultOfTicket ={
-                  Total:0,
-                  Passenger:[],
+            let result: resultOfTicket = {
+                  Total: 0,
+                  Passenger: [],
             }
 
             this.bookings.forEach(element => {
@@ -54,7 +54,7 @@ export class Airline {
                   flightNumber.forEach(elemen => {
                         if (elemen.getFlight().getFlightNumber() === flight.getFlightNumber()) {
                               if (element.getTicket() === Ticket.Return) {
-                                    result.Total ++;
+                                    result.Total++;
                                     result.Passenger.push(element.getPassenger());
                               }
                         }
@@ -70,19 +70,19 @@ export class Airline {
        */
 
       public getNumberOfMealTypeByGivenFlight(flightGive: Flight): Meal {
-            let result:Meal = {
-                  Total:0,
-                  Meal:[],
+            let result: Meal = {
+                  Total: 0,
+                  Meal: [],
             };
 
             this.flights.forEach(flight => {
                   if (flight.getFlightNumber() === flightGive.getFlightNumber()) {
                         flight.getMeal().forEach(meal => {
                               result.Total += 1;
-                              result.Meal.push(meal.getName())                              
+                              result.Meal.push(meal.getName())
                         });
                   }
-            });   
+            });
             return result;
       }
 
@@ -123,11 +123,11 @@ export class Airline {
        * @returns The gate number of the flight or undefined if the flight is not found.
        */
 
-      public getGatePlaneWaiting(flightGive: Flight):string{
-            let result:string;
+      public getGatePlaneWaiting(flightGive: Flight): string {
+            let result: string;
             this.flights.forEach(flight => {
-                  if (flight.getFlightNumber() === flightGive.getFlightNumber()){
-                        result =  flight.getRoute().getAirport().getGate().getGateNumber();
+                  if (flight.getFlightNumber() === flightGive.getFlightNumber()) {
+                        result = flight.getRoute().getAirport().getGate().getGateNumber();
                   }
             });
             return result;

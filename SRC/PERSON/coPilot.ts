@@ -4,7 +4,7 @@ import { Employee } from "./employee";
 import { Gender } from "./gender";
 
 export class Copilot extends Employee {
-    private flights:Flight[] = [];
+    private flights: Flight[] = [];
     constructor(id: number, firstName: string, lastName: string, age: number, gender: Gender, salary: number, private license: string) {
         super(id, firstName, lastName, age, gender, salary);
         this.license = license;
@@ -13,12 +13,12 @@ export class Copilot extends Employee {
         return this.salary;
     }
 
-    public getID():number{
+    public getID(): number {
         return this.id;
     }
 
-    public addFlight(...flight:Flight[]):void{
-      this.flights.push(...flight);
+    public addFlight(...flight: Flight[]): void {
+        this.flights.push(...flight);
     }
 
 }

@@ -3,14 +3,14 @@ import { Airport } from "./airport";
 export class Route {
     private departure: string;
     private arrival: string;
-    private airport:Airport;
+    private airport: Airport;
 
-    constructor (departure: string, arrival: string, airport:Airport) {
+    constructor(departure: string, arrival: string, airport: Airport) {
         this.departure = departure;
         this.arrival = arrival;
         this.airport = airport;
     }
-    
+
     getDeparture(): string {
         return this.departure;
     }
@@ -18,7 +18,7 @@ export class Route {
         return this.arrival;
     }
 
-    public getAirport():Airport{
+    public getAirport(): Airport {
         return this.airport;
     }
 }

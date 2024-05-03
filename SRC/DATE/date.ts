@@ -1,7 +1,7 @@
-export class DateTime{
-      constructor(private date:string, private time:string) { }
+export class DateTime {
+      constructor(private date: string, private time: string) { }
 
-      public getDate():string{
+      public getDate(): string {
             return this.date;
       }
 }

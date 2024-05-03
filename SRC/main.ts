@@ -45,7 +45,7 @@ let seat5 = new Seat("B05");
 let seat6 = new Seat("B06");
 let seat7 = new Seat("B07");
 
-//==========add seat to plane
+//-----------add seat to plane
 planeb13.addSeat(seat1,seat2,seat3,seat4,seat5,seat6,seat7);
 
 //pilot
@@ -76,26 +76,27 @@ let route2 = new Route("Phnom Penh,Cambodia","Thailand",airport2);
 
 let flight1 = new Flight("ABC001",planeb13,date1);
 let flight2 = new Flight("ABC002",planeb12,date1);
+let flight3 = new Flight("ABC003",planeb22,new DateTime("10-10-2024","9:45 AM"))
 
 //meal
 let pizza = new Meal("Pizza",30);
 let humberger = new Meal("Humberger",50);
 let coca = new Meal("Coca",4);
 
-//=====add pilot
+//------------- add pilot
 
 flight1.addPilot(pilot1);
 flight2.addPilot(pilot2);
 
-// ==== add co-pilot
+//------------- add co-pilot
 flight1.addCopilot(coPilot1);
 flight2.addCopilot(coPilot2);
 
-// ==== add route
+//-------------- add route
 flight1.addRoute(route2);
 flight2.addRoute(route1);
 
-// === add meal
+//-------------- add meal
 flight1.addMeal(pizza,humberger,coca);
 
 //passenger
@@ -114,7 +115,7 @@ let khavBooking = new Booking("BOOK1",khav,Ticket.Return, date1);
 let cheatBooking = new Booking("BOOK2",cheat,Ticket.Return, date1);
 let ngorBooking = new Booking("BOOK3",ngor,Ticket.NotReturn,date2);
 
-//====== add booking
+//------------------ add booking
 airline1.addBooking(khavBooking,cheatBooking);
 //bookingFligh
 let khavBookingFlight1 = new BookingFlight(flight1,bage1,seat1);
@@ -128,19 +129,17 @@ khavBookingFlight1.addMeal(humberger);
 khavBookingFlight2.addMeal(humberger);
 cheatBookingFlight1.addMeal(pizza);
 ngorBookingFlight1.addMeal(humberger);
-//========= add booking flight
+//---------------------- add booking flight
 khavBooking.addBookingFlight(khavBookingFlight1);
 khavBooking.addBookingFlight(khavBookingFlight2);
 cheatBooking.addBookingFlight(cheatBookingFlight1);
 ngorBooking.addBookingFlight(ngorBookingFlight1);
 
 
-//====== add flight
+//------------ add flight
 airline1.addFlight(flight1);
 airline1.addFlight(flight2);
 
-//====== add employee
-airline1.addEmployee(pilot1,pilot2,pilot3);
 
 //=============Q1 get info of passenger by booking reference number
 // console.log(airline1.getInfoOfPassengerByBookingReferenceNumber("BOOK1"));
@@ -159,7 +158,7 @@ coPilot1.addFlight(flight1);
 coPilot2.addFlight(flight2);
 
 
-// console.log(pilot1.getNumberOfFlightPilotJoin(date1));
+// console.log(pilot1.getNumberOfFlightPilotJoin(new DateTime("04-05-2024","3:00 Pm")));
 
 
 // ======= Q4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare.
@@ -167,11 +166,12 @@ coPilot2.addFlight(flight2);
 // console.log(airline1.getNumberOfMealTypeByGivenFlight(flight1));
 
 //======= Q5  As an airline manager, I want to find out how much salary I pay all my employees.
-
+//-------add employee
+airline1.addEmployee(pilot1,pilot2,pilot3,coPilot1,coPilot2);
 // console.log("Salary that I need to pay all my employees is : $",airline1.getTotalOfSalaryPayAllEmployees());
 
 // ===== Q6 As a passenger, I want to know which gate my plane is waiting at.
 
-console.log(airline1.getGateOfPassenger(khav));
+// console.log(airline1.getGateOfPassenger(khav));
 
-console.log(khavBookingFlight1);
+// console.log(khavBookingFlight1);

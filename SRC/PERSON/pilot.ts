@@ -44,6 +44,8 @@ export class Pilot extends Employee {
                 result.Date = date.getDate();
                 result.Total += 1;
                 result.FlightNumber.push(flight.getFlightNumber());                
+            }else{
+                result.Date = date.getDate();
             }
         });
         return result;
